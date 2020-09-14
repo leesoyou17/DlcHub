@@ -1,0 +1,157 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local Pe = Instance.new("ScreenGui")
+local Msg = Instance.new("Frame")
+local DLCHUB = Instance.new("TextLabel")
+local Load = Instance.new("Frame")
+local Frame = Instance.new("Frame")
+
+--Properties:
+
+Pe.Name = "Pe"
+Pe.Parent = game.CoreGui
+Pe.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Msg.Name = "Msg"
+Msg.Parent = Pe
+Msg.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Msg.BorderColor3 = Color3.fromRGB(255, 255, 255)
+Msg.Position = UDim2.new(0.391733438, 0, 0.37714988, 0)
+Msg.Size = UDim2.new(0, 350, 0, 200)
+
+DLCHUB.Name = "DLC HUB"
+DLCHUB.Parent = Msg
+DLCHUB.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+DLCHUB.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DLCHUB.Position = UDim2.new(0.214285716, 0, 0.200000003, 0)
+DLCHUB.Size = UDim2.new(0, 200, 0, 50)
+DLCHUB.Font = Enum.Font.SciFi
+DLCHUB.Text = "DLC HUB"
+DLCHUB.TextColor3 = Color3.fromRGB(255, 237, 206)
+DLCHUB.TextScaled = true
+DLCHUB.TextSize = 14.000
+DLCHUB.TextWrapped = true
+
+Load.Name = "Load"
+Load.Parent = Msg
+Load.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Load.BorderColor3 = Color3.fromRGB(255, 237, 206)
+Load.Position = UDim2.new(0.0171428565, 0, 0.625, 0)
+Load.Size = UDim2.new(0, 338, 0, 35)
+
+Frame.Parent = Load
+Frame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Frame.BorderColor3 = Color3.fromRGB(255, 237, 206)
+Frame.Size = UDim2.new(0, 0, 0, 34)
+
+-- Scripts:
+
+local function TOVSS_fake_script() -- Frame.LocalScript 
+	local script = Instance.new('LocalScript', Frame)
+
+	local screen = math.random(1,3)
+	
+	if screen == 1 then
+		print '1'
+		script.Parent.Parent.Parent.Parent.Enabled = true
+		wait(2)
+		
+		script.Parent:TweenSize(UDim2.new(.3, 1, 1), "Out", "Linear", 2, true)
+		wait(2)
+		script.Parent:TweenSize(UDim2.new(.5, 1, 1), "Out", "Linear", 1, true)
+		wait(3)
+		script.Parent:TweenSize(UDim2.new(1, 1, 1), "Out", "Linear", 1, true)
+		
+		
+		wait(1)
+		script.Parent.Parent.Parent.Parent.Enabled = false
+		wait(1)
+		script.Parent:TweenSize(UDim2.new(0, 0, 0), "Out", "Linear", 1, true)
+	end
+	
+	if screen == 2 then
+		print '2'
+		script.Parent.Parent.Parent.Parent.Enabled = true
+		wait(2)
+		
+		script.Parent:TweenSize(UDim2.new(.1, 1, 1), "Out", "Linear", 3, true)
+		wait(1)
+		script.Parent:TweenSize(UDim2.new(.4, 1, 1), "Out", "Linear", 2, true)
+		wait(4)
+		script.Parent:TweenSize(UDim2.new(.7, 1, 1), "Out", "Linear", 3, true)
+		wait(1)
+		script.Parent:TweenSize(UDim2.new(1, 1, 1), "Out", "Linear", 1, true)
+		
+		
+		wait(1)
+		script.Parent.Parent.Parent.Parent.Enabled = false
+		wait(1)
+		script.Parent:TweenSize(UDim2.new(0, 0, 0), "Out", "Linear", 1, true) 
+	end
+	if screen == 3 then
+		print '3'
+		script.Parent.Parent.Parent.Parent.Enabled = true
+		wait(2)
+		
+		script.Parent:TweenSize(UDim2.new(.6, 1, 1), "Out", "Linear", 2, true)
+		wait(2)
+		script.Parent:TweenSize(UDim2.new(.8, 1, 1), "Out", "Linear", 3, true)
+		wait(3)
+		script.Parent:TweenSize(UDim2.new(1, 1, 1), "Out", "Linear", 1, true)
+		
+		
+		wait(1)
+		script.Parent.Parent.Parent.Parent.Enabled = false
+		wait(1)
+		script.Parent:TweenSize(UDim2.new(0, 0, 0), "Out", "Linear", 1, true)
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/leesoyou17/DlcHub/master/DLC%20Hub%20Game%20Pick%20V2.txt", true))()
+	end
+end
+coroutine.wrap(TOVSS_fake_script)()
+local function EOZILKH_fake_script() -- Msg.LocalScript 
+	local script = Instance.new('LocalScript', Msg)
+
+	local UserInputService = game:GetService("UserInputService")
+	
+	local gui = script.Parent
+	
+	local dragging
+	local dragInput
+	local dragStart
+	local startPos
+	
+	local function update(input)
+		local delta = input.Position - dragStart
+		gui.Position = gui:TweenPosition(UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y), 'Out', 'Linear', 0, true); -- drag speed
+	end
+	
+	gui.InputBegan:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+			dragging = true
+			dragStart = input.Position
+			startPos = gui.Position
+			
+			input.Changed:Connect(function()
+				if input.UserInputState == Enum.UserInputState.End then
+					dragging = false
+				end
+			end)
+		end
+	end)
+	
+	gui.InputChanged:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+			dragInput = input
+		end
+	end)
+	
+	UserInputService.InputChanged:Connect(function(input)
+		if input == dragInput and dragging then
+			update(input)
+		end
+	end)
+end
+coroutine.wrap(EOZILKH_fake_script)()
