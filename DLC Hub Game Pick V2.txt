@@ -17,8 +17,8 @@ Menu.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 TextLabel.Parent = Menu
 TextLabel.BackgroundColor3 = Color3.fromRGB(255, 239, 210)
 TextLabel.BorderColor3 = Color3.fromRGB(255, 239, 210)
-TextLabel.Position = UDim2.new(0.215299204, 0, 0.3071253, 0)
-TextLabel.Size = UDim2.new(0, 400, 0, 10)
+TextLabel.Position = UDim2.new(0.215299204, 0, 0.299606502, 0)
+TextLabel.Size = UDim2.new(0, 400, 0, 15)
 TextLabel.Font = Enum.Font.SourceSans
 TextLabel.Text = ""
 TextLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
@@ -26,8 +26,9 @@ TextLabel.TextSize = 14.000
 
 TextButton.Parent = TextLabel
 TextButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-TextButton.Position = UDim2.new(0.975000024, 0, 0, 0)
-TextButton.Size = UDim2.new(0, 10, 0, 10)
+TextButton.BorderColor3 = Color3.fromRGB(255, 0, 0)
+TextButton.Position = UDim2.new(0.959999979, 0, 0, 0)
+TextButton.Size = UDim2.new(0, 15, 0, 15)
 TextButton.Font = Enum.Font.SourceSans
 TextButton.Text = "X"
 TextButton.TextColor3 = Color3.fromRGB(0, 0, 0)
@@ -42,7 +43,7 @@ ScrollingFrame.Size = UDim2.new(0, 400, 0, 300)
 
 -- Scripts:
 
-local function OIBUBZH_fake_script() -- TextLabel.Script 
+local function EGDN_fake_script() -- TextLabel.Script 
 	local script = Instance.new('Script', TextLabel)
 
 	while true do
@@ -78,16 +79,16 @@ local function OIBUBZH_fake_script() -- TextLabel.Script
 		wait(1)
 	end
 end
-coroutine.wrap(OIBUBZH_fake_script)()
-local function JELCAQ_fake_script() -- TextButton.LocalScript 
+coroutine.wrap(EGDN_fake_script)()
+local function AJVCK_fake_script() -- TextButton.LocalScript 
 	local script = Instance.new('LocalScript', TextButton)
 
 	script.Parent.MouseButton1Click:Connect(function()
 		script.Parent.Parent.Visible = false
 	end)
 end
-coroutine.wrap(JELCAQ_fake_script)()
-local function GUTTPF_fake_script() -- TextLabel.LocalScript 
+coroutine.wrap(AJVCK_fake_script)()
+local function UVXXAK_fake_script() -- TextLabel.LocalScript 
 	local script = Instance.new('LocalScript', TextLabel)
 
 	local UserInputService = game:GetService("UserInputService")
@@ -130,4 +131,4 @@ local function GUTTPF_fake_script() -- TextLabel.LocalScript
 		end
 	end)
 end
-coroutine.wrap(GUTTPF_fake_script)()
+coroutine.wrap(UVXXAK_fake_script)()
