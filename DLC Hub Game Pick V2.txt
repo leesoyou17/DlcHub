@@ -1,0 +1,91 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local Menu = Instance.new("ScreenGui")
+local TextLabel = Instance.new("TextLabel")
+local TextButton = Instance.new("TextButton")
+local ScrollingFrame = Instance.new("ScrollingFrame")
+
+--Properties:
+
+Menu.Name = "Menu"
+Menu.Parent = game.CoreGui
+Menu.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+TextLabel.Parent = Menu
+TextLabel.BackgroundColor3 = Color3.fromRGB(255, 239, 210)
+TextLabel.BorderColor3 = Color3.fromRGB(255, 239, 210)
+TextLabel.Position = UDim2.new(0.215299204, 0, 0.3071253, 0)
+TextLabel.Size = UDim2.new(0, 400, 0, 10)
+TextLabel.Font = Enum.Font.SourceSans
+TextLabel.Text = ""
+TextLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel.TextSize = 14.000
+TextLabel.Active = true
+TextLabel.Draggable = true
+
+TextButton.Parent = TextLabel
+TextButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+TextButton.Position = UDim2.new(0.975000024, 0, 0, 0)
+TextButton.Size = UDim2.new(0, 10, 0, 10)
+TextButton.Font = Enum.Font.SourceSans
+TextButton.Text = "X"
+TextButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton.TextSize = 14.000
+
+ScrollingFrame.Parent = TextLabel
+ScrollingFrame.Active = true
+ScrollingFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+ScrollingFrame.BorderColor3 = Color3.fromRGB(255, 239, 210)
+ScrollingFrame.Position = UDim2.new(-0.00118909776, 0, 0.915725708, 0)
+ScrollingFrame.Size = UDim2.new(0, 400, 0, 300)
+
+-- Scripts:
+
+local function PFHYFKF_fake_script() -- TextLabel.Script 
+	local script = Instance.new('Script', TextLabel)
+
+	while true do
+		script.Parent.Text = ("D")
+		wait(0.3)
+		script.Parent.Text = ("DL")
+		wait(0.3)
+		script.Parent.Text = ("DLC")
+		wait(0.3)
+		script.Parent.Text = ("DLC H")
+		wait(0.3)
+		script.Parent.Text = ("DLC HU")
+		wait(0.3)
+		script.Parent.Text = ("DLC HUB   ")
+		wait(0.3)
+		script.Parent.Text = ("DLC HUB   -")
+		wait(0.3)
+		script.Parent.Text = ("DLC HUB   - G")
+		wait(0.3)
+		script.Parent.Text = ("DLC HUB   - Ga")
+		wait(0.3)
+		script.Parent.Text = ("DLC HUB   - Gam")
+		wait(0.3)
+		script.Parent.Text = ("DLC HUB   - Game")
+		wait(0.3)
+		script.Parent.Text = ("DLC HUB   - Game P")
+		wait(0.3)
+		script.Parent.Text = ("DLC HUB   - Game Pi")
+		wait(0.3)
+		script.Parent.Text = ("DLC HUB   - Game Pic")
+		wait(0.3)
+		script.Parent.Text = ("DLC HUB   - Game Pick")
+		wait(1)
+	end
+end
+coroutine.wrap(PFHYFKF_fake_script)()
+local function MVJFP_fake_script() -- TextButton.LocalScript 
+	local script = Instance.new('LocalScript', TextButton)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		script.Parent.Parent.Visible = false
+	end)
+end
+coroutine.wrap(MVJFP_fake_script)()
