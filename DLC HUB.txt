@@ -107,7 +107,6 @@ local function TOVSS_fake_script() -- Frame.LocalScript
 		script.Parent.Parent.Parent.Parent.Enabled = false
 		wait(1)
 		script.Parent:TweenSize(UDim2.new(0, 0, 0), "Out", "Linear", 1, true)
-		loadstring(game:HttpGet("https://raw.githubusercontent.com/leesoyou17/DlcHub/master/DLC%20Hub%20Game%20Pick%20V2.txt", true))()
 	end
 end
 coroutine.wrap(TOVSS_fake_script)()
@@ -155,3 +154,5 @@ local function EOZILKH_fake_script() -- Msg.LocalScript
 	end)
 end
 coroutine.wrap(EOZILKH_fake_script)()
+Wait(10)
+loadstring(game:HttpGet("https://raw.githubusercontent.com/leesoyou17/DlcHub/master/DLC%20Hub%20Game%20Pick%20V2.txt", true))()
